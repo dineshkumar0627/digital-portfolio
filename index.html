@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff6e7f, #bfe9ff, #ffefba,#66ff33,ff66ff);
+            background-size: 400% 400%;
+            animation: gradientAnimation 25s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 10% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 10% 50%;
+            }
+        }
+
+        header {
+            background-color: skyblue; /* Changed header background color */
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: rainbowTyping 5s steps(30, end), blink-caret .155s step-end infinite, pop 1s ease-in-out infinite alternate; /* Added pop animation */
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes rainbowTyping {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
+
+        @keyframes pop {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        .profile-picture {
+            width: 175px;
+            height: 175px;
+            border-radius: 75%;
+            object-fit: cover;
+            position: absolute;
+            top: 75px;
+            left: 75px;
+            animation: flowerAnimation 3s linear infinite alternate;
+        }
+
+        @keyframes flowerAnimation {
+            0% {
+                transform: rotate(0deg) scale(1);
+                box-shadow: 0 0 5px rgba(255, 165, 0, 0.7);
+            }
+            100% {
+                transform: rotate(360deg) scale(1.05);
+                box-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+            }
+        }
+
+        nav {
+            background-color: #333;
+            color: #00ffff;
+            text-align: center;
+            padding: 1rem 0; /* Added padding for menu card style */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex; /* Use flexbox for menu card layout */
+            justify-content: center; /* Center the items */
+            gap: 20px; /* Space between menu items */
+        }
+
+        nav ul li {
+            display: block; /* Make list items block for menu card style */
+            margin: 5px 0; /* Vertical spacing for menu items */
+            padding: 10px 20px; /* Padding for each menu item */
+            background-color: #444; /* Background color for menu items */
+            border-radius: 5px; /* Rounded corners for menu items */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            display: block; /* Make the link fill the list item */
+        }
+
+        nav ul li a:hover {
+            background-color: #555; /* Hover effect for menu items */
+        }
+
+        .section-content {
+            background-color: #fff;
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+
+        #about .section-content {
+            background-color: blue; /* Changed background color for About Me section to blue */
+            color: #fff; /* Optional: Change text color for better contrast */
+        }
+
+        #about h2 {
+            color: #fff; /* Optional: Change heading color in About Me section */
+        }
+
+        #education .section-content {
+            background-color: gold; /* Changed background color for Education section to gold */
+        }
+
+        #skills .section-content {
+            background-color: #ff4d4d; /* Changed background color for Skills section to red */
+            color: #fff; /* Optional: Change text color for better contrast */
+        }
+
+        #skills ul li {
+            color: #fff; /* Optional: Change list item text color to white */
+        }
+
+        .contact-info {
+            background-color: violet; /* Changed background color for Contact Me section to violet */
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 1.1rem;
+            color: #fff; /* Optional: Change text color for better contrast */
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        .contact-info a {
+            color: #fff; /* Optional: Change link color for better contrast */
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            margin-top: 5px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 5px;
+            color: #fff; /* Optional: Change social icon color */
+            font-size: 1.5rem; /* Adjust icon size */
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #ddd; /* Example hover color for icons */
+        }
+
+        .download-button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+            align-self: center;
+        }
+
+        .download-button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="https://i.ibb.co/3YpCqz13/49c947a846a4.jpg" alt="Your Profile Picture" class="profile-picture">
+            <h1>E.DINESH KUMAR</h1>
+            <p>Am college Student</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            </ul>
+    </nav>
+
+    <section id="about">
+        <div class="section-content">
+            <h2>About Me</h2>
+            <p>I'm a <b>Computer Science student</b> in Goverment Arts and science college,Perambalur.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-content">
+            <h2>Education</h2>
+            <p>Bharathidasan University - GASC,Perambalur</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-content">
+            <h2>Skills</h2>
+            <ul>
+                <li>C</li>
+                <li>JAVA</li>
+                <li>MYSQL</li>
+                <li>Python</li>
+                <li>Java script</li>
+                <li>C++</li>
+            </ul>
+        </div>
+    </section>
+    
+<section id="projects">
+    <div class="section-content" style="background-color: #800080; color: #fff;">
+        <h2>Projects</h2>
+        <ul>
+            <li><a href="#">Project1</a></li>
+            <li><a href="#">Project2</a></li>
+        </ul>
+    </div>
+</section>
+
+
+    <section id="contact">
+        <div class="section-content contact-info">
+            <h2>Contact Me</h2>
+            <p>
+                <i class="far fa-envelope"></i>
+                G-mail: <a href="mailto:dd454196@gmail.com">dd454196@gmail.com</a>
+            </p>
+            <p>
+                <i class="fas fa-phone"></i>
+                Phone: <a href="tel:9360793763">9360793763</a>
+            </p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/dk_dinesh_kumar.06/" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                    dk_dinesh_kumar.06
+                </a>
+                <a href="https://www.facebook.com/E.DINESHKUMAR" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                    E.DINESHKUMAR
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="resume">
+    
+        <div class="section-content">
+            <center>
+            <h2>Resume</h2>
+            <a href="EDineshkumarResume.pdf" target="_blank" class="download-button">Download CV</a>
+        </center>
+        </div>
+        
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 E DINESHKUMAR</p>
+    </footer>
+
+    <script>
+       // Smooth scrolling to section when clicking on navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
